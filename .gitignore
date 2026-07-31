@@ -1,0 +1,5 @@
+/.kotlin/
+/build/
+/.gradle/
+/config.json
+/git-obsidian.iml
