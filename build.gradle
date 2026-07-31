@@ -1,0 +1,26 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.3.0'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '2.3.0'
+}
+
+group = 'timonff.com'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    implementation("com.github.ajalt.clikt:clikt:5.0.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
+    implementation group: 'org.gitlab4j', name: 'gitlab4j-api', version: '6.3.0'
+}
+
+kotlin {
+    jvmToolchain(25)
+}
+
+test {
+    useJUnitPlatform()
+}
