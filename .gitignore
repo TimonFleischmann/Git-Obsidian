@@ -47,5 +47,6 @@ bin/
 /build/
 /.gradle/
 /config.json
+/git-obsidian.iml
 /.idea/
 /git-obsidian.iml
