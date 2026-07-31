@@ -60,7 +60,7 @@ class ObsidianWriter(
                             { it.notes.firstOrNull()?.line ?: 0 }
                         )
                     )
-                    appendForFile(mergeId,file, sorted)
+                    appendForFile(file, sorted)
                 }
 
         }
@@ -68,7 +68,7 @@ class ObsidianWriter(
         Files.writeString(file, content)
     }
 
-    private fun StringBuilder.appendForFile(mergeId: Long, file: String, discussions: List<Discussion>) {
+    private fun StringBuilder.appendForFile(file: String, discussions: List<Discussion>) {
         appendLine("---")
         appendLine("# \uD83D\uDCC4 $file")
         appendLine()
