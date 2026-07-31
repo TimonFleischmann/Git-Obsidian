@@ -1,6 +1,7 @@
 package commands
 
 import com.github.ajalt.clikt.core.CliktCommand
+import com.github.ajalt.clikt.core.Context
 import kotlinx.serialization.json.Json
 import model.Config
 import java.nio.file.Files
@@ -44,7 +45,9 @@ class Config : CliktCommand() {
 
         return config
     }
-
+    override fun help(context: Context): String {
+        return "set configurations"
+    }
     companion object {
         private val json = Json {
             prettyPrint = true
