@@ -17,6 +17,8 @@ class Resolve : CliktCommand() {
         val api: GitApi = GitApiImpl(config)
         val project = api.getProject(config.projectPathOrId)
         val discussions = api.getDiscussions(project, mergeId)
+
+        echo("${discussions.size} Threads found")
         val writer:Writer=ObsidianWriter(
             Path(config.vaultPath),
             config,
@@ -26,8 +28,6 @@ class Resolve : CliktCommand() {
             mergeId,
             discussions
         )
-
-        echo("${discussions.size} Threads found")
     }
 
     override fun help(context: Context): String {
