@@ -49,10 +49,11 @@ class GitApiImpl(
     }
 
     override fun getProject(projectPathOrId: String): Project {
+        val project = api.projectApi.getProject(projectPathOrId)
         return Project(
-            api.projectApi.getProject(projectPathOrId).id,
-            api.projectApi.getProject(projectPathOrId).pathWithNamespace,
-            api.projectApi.getProject(projectPathOrId).path
+            project.id,
+            project.pathWithNamespace,
+            project.path
         )
 
     }
